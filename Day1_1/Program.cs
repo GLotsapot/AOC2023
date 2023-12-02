@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 Regex regex = new Regex(@"\d");
 int answer = 0;
 
-var input = File.ReadLines("input.txt");
+var input = File.ReadLines("input1.txt");
 foreach (var line in input)
 {
     var matches = regex.Matches(line);
