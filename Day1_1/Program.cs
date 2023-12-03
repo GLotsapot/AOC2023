@@ -11,5 +11,5 @@ foreach (var line in input)
     var first = Int32.Parse(matches.First().Value);
     var last = Int32.Parse(matches.Last().Value);
     answer += first * 10 + last;
-} 
+}
 Console.WriteLine(answer);
