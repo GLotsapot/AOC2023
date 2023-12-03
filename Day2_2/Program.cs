@@ -7,16 +7,12 @@ foreach(string gamedata in System.IO.File.ReadAllLines("input.txt"))
     games.Add(new Game(gamedata));
 }
 
-var filteredResult = from g in games
-                     where g.MaxRed <= 12 && g.MaxGree <= 13 && g.MaxBlue <= 14
-                     select g;
-
-var GameSum = 0;
-foreach(Game game in filteredResult)
+int power = 0;
+foreach(Game game in games)
 {
-    GameSum += game.Number;
+    power += game.MaxGreen * game.MaxRed * game.MaxBlue;
 }
-Console.WriteLine(GameSum);
+Console.WriteLine("Total power is: {0}", power);
 
 
 public class Game
@@ -29,7 +25,7 @@ public class Game
     {
         get { return Draws.Max(x => x.Red); }
     }
-    public int MaxGree
+    public int MaxGreen
     {
         get { return Draws.Max(x => x.Green); }
     }
