@@ -47,7 +47,7 @@ public class Game
         //Parse draws
         foreach (string drawdata in values.Substring(values.IndexOf(":")+1).Split(";"))
         {
-            Draws.Add(new Draw(drawdata));
+            this.Draws.Add(new Draw(drawdata));
         }
     }
 
